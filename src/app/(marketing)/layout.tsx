@@ -1,0 +1,14 @@
+import { Navbar } from "@/components/shared/navbar";
+import { Footer } from "@/components/shared/footer";
+
+export default function MarketingLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <Navbar />
+      <main className="relative min-h-screen bg-background text-foreground">
+        {children}
+      </main>
+      <Footer />
+    </>
+  );
+}
