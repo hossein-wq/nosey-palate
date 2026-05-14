@@ -2,7 +2,7 @@ import { Eyebrow, Reveal } from "./primitives";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const FAQ = [
+const ITEMS = [
   { q: "How do I become a member?", a: "Submit a brief application. We review for fit, taste, and intent — most members are referred. We respond within 7 days." },
   { q: "What's included with my membership?", a: "Curated events, member-only invitations, sommelier-led tastings, private dinners, travel access, and our digital companion app." },
   { q: "Can I bring guests?", a: "Connoisseur and Collector members may bring a +1 to most events. Some intimate dinners are members-only." },
@@ -25,7 +25,7 @@ export function FAQ() {
         </div>
 
         <div className="space-y-px">
-          {FAQ.map((item, i) => {
+          {ITEMS.map((item, i) => {
             const isOpen = open === i;
             return (
               <div key={item.q} className="border-t border-gold/15 last:border-b">
