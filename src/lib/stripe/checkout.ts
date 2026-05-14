@@ -1,6 +1,6 @@
 "use server";
 
-import { stripe } from "./client";
+import { getStripe } from "./client";
 
 export async function createCheckoutSession({
   userId,
@@ -11,7 +11,7 @@ export async function createCheckoutSession({
   priceId: string;
   customerEmail: string;
 }) {
-  const session = await stripe.checkout.sessions.create({
+  const session = await getStripe().checkout.sessions.create({
     mode: "subscription",
     payment_method_types: ["card"],
     customer_email: customerEmail,
